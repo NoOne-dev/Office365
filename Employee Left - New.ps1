@@ -1,9 +1,10 @@
 ##This script is to disable users, change their passwords, move them to a different OU, force sync your domain controllers, remove Office 365 licenses,
 ##add an Exchange 2 license for litigation hold, and turn on litigation hold on the account.
 
+##This is being deprecated, but I thought I'd leave it up for anyone in case they might find it useful.
+
 ##Change the DomainForOffice365 to your domain.  Specifically the part before .onmicrosoft.com
 ##Also change yourdomain at various points.  The OU "Disabled Accounts" portion moves the account to that OU, and keeps things tidy.
-
 
 ##This section requires the profile.ps1 file found here:  https://github.com/Scine/Powershell/blob/master/profile.ps1
 ##Put that file under your Documents\Windows Powershell\ folder.
@@ -62,3 +63,6 @@ ForEach ($DC in $DomainControllers.Name) {
         REPADMIN /syncall $DC "dc=yourdomain,dc=local" /d /e /q
     }
 }
+
+
+##Find scripts like this at https://github.com/Scine/Office365  Enjoy!

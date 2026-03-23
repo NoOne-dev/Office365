@@ -2,7 +2,7 @@
 
 ## This Powershell script will generate a random 10 character password, based upon information found here:
 ## https://www.undocumented-features.com/2016/09/20/powershell-random-password-generator/
-## Note:  You can change the length in the $newpass line from 10 to whatever you want
+## Note: You can change the length in the $newpass line from 10 to whatever you want
 
 ## It will then change the AD user's password to the random one generated and let you know the new password
 
@@ -22,6 +22,8 @@
 
 ## Change the DOMAIN and TLD to your respective ones, and change server.domain.tld to your respective
 ## server that's syncing AD to Office 365.
+
+##Find scripts like this at https://github.com/Scine/Office365  Enjoy!
 
 Import-Module $((Get-ChildItem -Path $($env:LOCALAPPDATA+"\Apps\2.0\") -Filter Microsoft.Exchange.Management.ExoPowershellModule.dll -Recurse ).FullName|?{$_ -notmatch "_none_"}|select -First 1)
 $EXOSession = New-ExoPSSession
